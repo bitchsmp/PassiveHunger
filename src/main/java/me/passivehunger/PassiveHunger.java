@@ -32,9 +32,6 @@ public final class PassiveHunger extends JavaPlugin {
         // Register Quit Listener to clean up memory
         getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
 
-        // Start Ticker
-        startTicker();
-
         getLogger().info("PassiveHunger has been enabled!");
     }
 
@@ -72,9 +69,7 @@ public final class PassiveHunger extends JavaPlugin {
         }
 
         if (tickerTask == null) {
-            if (hungerTicker == null) {
-                hungerTicker = new HungerTicker(this);
-            }
+            hungerTicker = new HungerTicker(this);
             // Run task every 20 ticks (1 second)
             tickerTask = hungerTicker.runTaskTimer(this, 20L, 20L);
             getLogger().info("PassiveHunger ticker started.");
@@ -92,6 +87,7 @@ public final class PassiveHunger extends JavaPlugin {
         }
         if (hungerTicker != null) {
             hungerTicker.clearCache();
+            hungerTicker = null;
         }
     }
 
