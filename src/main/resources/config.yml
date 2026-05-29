@@ -1,0 +1,18 @@
+# PassiveHunger Configuration
+
+# Enable or disable the hunger depletion logic
+enabled: true
+
+# The time (in seconds) it takes to fully deplete 20 hunger and 20 saturation (total 40 points)
+# starting from maximum capacity.
+# Default: 1200.0 seconds (20 minutes). This yields a rate of 1 point every 30 seconds.
+total-depletion-time-seconds: 1200.0
+
+# Exclude players in Creative or Spectator mode from passive hunger depletion
+exclude-creative-spectator: true
+
+# Exclude players in worlds set to Peaceful difficulty
+exclude-peaceful: true
+
+# Exclude players who have the "passivehunger.bypass" permission
+exclude-bypass-permission: true

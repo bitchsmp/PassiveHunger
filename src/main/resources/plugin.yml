@@ -1,0 +1,21 @@
+name: PassiveHunger
+version: '${project.version}'
+main: me.passivehunger.PassiveHunger
+api-version: '1.21'
+author: Antigravity
+description: Deducts player hunger/saturation over time regardless of activity level.
+
+commands:
+  passivehunger:
+    description: Control the PassiveHunger plugin.
+    aliases: [ph]
+    permission: passivehunger.admin
+    usage: /<command> [reload|toggle|status]
+
+permissions:
+  passivehunger.admin:
+    description: Allows administering the PassiveHunger plugin.
+    default: op
+  passivehunger.bypass:
+    description: Bypasses passive hunger depletion.
+    default: false
