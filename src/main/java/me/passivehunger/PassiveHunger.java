@@ -10,6 +10,7 @@ public final class PassiveHunger extends JavaPlugin {
     private boolean excludeCreativeSpectator;
     private boolean excludePeaceful;
     private boolean excludeBypassPermission;
+    private int minFoodThreshold;
 
     private HungerTicker hungerTicker;
     private BukkitTask tickerTask;
@@ -51,6 +52,7 @@ public final class PassiveHunger extends JavaPlugin {
         this.excludeCreativeSpectator = getConfig().getBoolean("exclude-creative-spectator", true);
         this.excludePeaceful = getConfig().getBoolean("exclude-peaceful", true);
         this.excludeBypassPermission = getConfig().getBoolean("exclude-bypass-permission", true);
+        this.minFoodThreshold = getConfig().getInt("min-food-threshold", 0);
 
         // Adjust running state based on loaded config
         if (depletionEnabled) {
@@ -120,6 +122,10 @@ public final class PassiveHunger extends JavaPlugin {
 
     public boolean isExcludeBypassPermission() {
         return excludeBypassPermission;
+    }
+
+    public int getMinFoodThreshold() {
+        return minFoodThreshold;
     }
 
     public HungerTicker getHungerTicker() {

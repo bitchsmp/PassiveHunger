@@ -95,6 +95,10 @@ public final class HungerTicker extends BukkitRunnable {
             return true;
         }
 
+        if (player.getFoodLevel() < plugin.getMinFoodThreshold()) {
+            return true;
+        }
+
         return false;
     }
 

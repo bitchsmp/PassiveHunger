@@ -16,3 +16,9 @@ exclude-peaceful: true
 
 # Exclude players who have the "passivehunger.bypass" permission
 exclude-bypass-permission: true
+
+# The minimum food level (0 to 20) required for passive hunger to apply.
+# If a player's food level falls below this value, passive hunger will stop depleting their food.
+# Default: 0 (depletes all the way to 0 hunger)
+min-food-threshold: 0
+

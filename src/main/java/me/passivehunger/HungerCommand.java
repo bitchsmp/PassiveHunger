@@ -93,6 +93,10 @@ public final class HungerCommand implements CommandExecutor, TabCompleter {
         
         sender.sendMessage(Component.text(" - Bypass Permission: ", NamedTextColor.GRAY)
                 .append(Component.text(plugin.isExcludeBypassPermission() ? "Excluded" : "Included", plugin.isExcludeBypassPermission() ? NamedTextColor.GREEN : NamedTextColor.RED)));
+
+        sender.sendMessage(Component.text("Thresholds:", NamedTextColor.YELLOW));
+        sender.sendMessage(Component.text(" - Min Food Threshold: ", NamedTextColor.GRAY)
+                .append(Component.text(plugin.getMinFoodThreshold() + " food points", NamedTextColor.WHITE)));
     }
 
     @Override
